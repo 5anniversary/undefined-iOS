@@ -1,0 +1,6 @@
+framework module Pods_Undefined {
+  umbrella header "Pods-Undefined-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,28 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Undefined' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Undefined
+
+  pod 'Toaster'
+  pod 'Gedatsu', configuration: %w(Debug)
+  pod 'Kingfisher'
+  pod 'SnapKit', '~> 5.0.0'
+  pod 'SwiftKeychainWrapper'
+  pod 'Then'
+  pod 'YPImagePicker'
+  pod "Apollo"
+
+  target 'UndefinedTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'UndefinedUITests' do
+    # Pods for testing
+  end
+
+end
