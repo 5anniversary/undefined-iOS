@@ -66,7 +66,7 @@ class MapVC: UIViewController {
         }
         
         
-        mapView.addPOIItems([po1, po2, po3, po4, po5])
+        mapView.addPOIItems([po1])
         mapView.fitAreaToShowAllPOIItems()
     }
 
