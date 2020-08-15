@@ -11,7 +11,8 @@ import UIKit
 class MapVC: UIViewController {
     
     let mapView = MTMapView().then {
-        $0.setMapCenter(.init(geoCoord: .init(latitude: 37.537229, longitude: 127.005515)), animated: true)
+        $0.setMapCenter(.init(geoCoord: .init(latitude: 37.537229, longitude: 127.005515)),
+                        animated: true)
     }
 
     let po1 = MTMapPOIItem().then{
