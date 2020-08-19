@@ -16,13 +16,29 @@ class LoginVC: UIViewController {
 
     let appleLoginButton = ASAuthorizationAppleIDButton(type: .continue, style: .black)
     
+    var apiURL: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.addSubview(appleLoginButton)
         
         constraint()
+        
+        apiURL = url()
+        print(apiURL)
     }
+    
+    private func url() -> String? {
+        if let path = Bundle.main.path(forResource: "Info", ofType: "plist") {
+            let dictRoot = NSDictionary(contentsOfFile: path)
+            if let dict = dictRoot {
+                return dict["API_URL"] as? String
+            }
+        }
+        return nil
+    }
+    
     
     func constraint(){
         appleLoginButton.snp.makeConstraints { (make) in

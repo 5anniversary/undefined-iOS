@@ -892,6 +892,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				API_URL = 5anniversary.dev/develop;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -954,6 +955,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				API_URL = 5anniversary.dev/relase;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1011,6 +1013,8 @@
 			baseConfigurationReference = 5C1AB3884F1E774009EE3F50 /* Pods-Undefined.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUNDLE_NAME = Platz_Dev;
+				Bundle_identifier = com.platz.dev;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_ENTITLEMENTS = Undefined/Platz.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1027,7 +1031,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.plazt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.platz;
 				PRODUCT_NAME = Platz;
 				SWIFT_OBJC_BRIDGING_HEADER = Undefined/Global/Utils/BridgeHeader.h;
 				SWIFT_VERSION = 5.0;
@@ -1039,7 +1043,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B4874D85CF290A4FA6BFE2E7 /* Pods-Undefined.release.xcconfig */;
 			buildSettings = {
+				API_URL = 5anniversary.dev/release;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUNDLE_NAME = Platz;
+				Bundle_identifier = com.platz;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_ENTITLEMENTS = Undefined/Platz.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1056,7 +1063,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.plazt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.platz;
 				PRODUCT_NAME = Platz;
 				SWIFT_OBJC_BRIDGING_HEADER = Undefined/Global/Utils/BridgeHeader.h;
 				SWIFT_VERSION = 5.0;
