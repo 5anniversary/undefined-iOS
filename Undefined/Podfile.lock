@@ -1,0 +1,56 @@
+PODS:
+  - Apollo (0.30.0):
+    - Apollo/Core (= 0.30.0)
+  - Apollo/Core (0.30.0)
+  - Gedatsu (1.2.0)
+  - Kingfisher (5.14.1):
+    - Kingfisher/Core (= 5.14.1)
+  - Kingfisher/Core (5.14.1)
+  - PryntTrimmerView (4.0.0)
+  - SnapKit (5.0.1)
+  - SteviaLayout (4.7.3)
+  - SwiftKeychainWrapper (3.4.0)
+  - Then (2.7.0)
+  - Toaster (2.2.0)
+  - YPImagePicker (4.2.1):
+    - PryntTrimmerView (~> 4.0.0)
+    - SteviaLayout (~> 4.7.3)
+
+DEPENDENCIES:
+  - Apollo
+  - Gedatsu
+  - Kingfisher
+  - SnapKit (~> 5.0.0)
+  - SwiftKeychainWrapper
+  - Then
+  - Toaster
+  - YPImagePicker
+
+SPEC REPOS:
+  trunk:
+    - Apollo
+    - Gedatsu
+    - Kingfisher
+    - PryntTrimmerView
+    - SnapKit
+    - SteviaLayout
+    - SwiftKeychainWrapper
+    - Then
+    - Toaster
+    - YPImagePicker
+
+SPEC CHECKSUMS:
+  Apollo: c10bf1a4c7db5237be1056ace16347cd1cdcb863
+  Gedatsu: 13a21a3cbf7978f9ff671eca5715b94a4309d9a8
+  Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
+  PryntTrimmerView: 67e67573ffd4c073f1308effa66aefd0cfa667a0
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
+  SwiftKeychainWrapper: 6fc49fbf7d4a6b0772917acb0e53a1639f6078d6
+  Then: acfe0be7e98221c6204e12f8161459606d5d822d
+  Toaster: c1a81b376edcc2470157b4d1ee1e9341d3b96455
+  YPImagePicker: 3b88ca0c50134af2856c48c481572c98a8b8b65b
+
+PODFILE CHECKSUM: 54c05efc4481ce2f6ed7fbf07d0f4afb61e3ec10
+
+COCOAPODS: 1.9.3
