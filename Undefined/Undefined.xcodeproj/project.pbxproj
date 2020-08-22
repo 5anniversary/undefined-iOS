@@ -22,7 +22,7 @@
 		D16404B724D96AB2004ED6DC /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16404B624D96AB2004ED6DC /* APIConstants.swift */; };
 		D16404B924D96AC7004ED6DC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16404B824D96AC7004ED6DC /* Model.swift */; };
 		D16404BB24D96ACF004ED6DC /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16404BA24D96ACF004ED6DC /* Util.swift */; };
-		D16404BD24D96ADC004ED6DC /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16404BC24D96ADC004ED6DC /* Extension.swift */; };
+		D16404BD24D96ADC004ED6DC /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16404BC24D96ADC004ED6DC /* UIViewController+.swift */; };
 		D16404BF24D96AE3004ED6DC /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16404BE24D96AE3004ED6DC /* Enum.swift */; };
 		D16404C124D96AEB004ED6DC /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16404C024D96AEB004ED6DC /* Cell.swift */; };
 		D16404C324D96B1B004ED6DC /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16404C224D96B1B004ED6DC /* Splash.storyboard */; };
@@ -51,6 +51,10 @@
 		D16404FA24D976F5004ED6DC /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D16404F024D9723F004ED6DC /* libc++.tbd */; };
 		D164050024D978D7004ED6DC /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16404FF24D978D7004ED6DC /* Login.storyboard */; };
 		D164050224D978E2004ED6DC /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D164050124D978E2004ED6DC /* LoginVC.swift */; };
+		D187801124EFA21E00811678 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187801024EFA21E00811678 /* UIView+.swift */; };
+		D187801724EFA7A800811678 /* ScrollableBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187801624EFA7A800811678 /* ScrollableBottomSheetViewController.swift */; };
+		D187801924EFA7BC00811678 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187801824EFA7BC00811678 /* BottomSheetViewController.swift */; };
+		D187801B24EFA82B00811678 /* DefaultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187801A24EFA82B00811678 /* DefaultTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,7 +103,7 @@
 		D16404B624D96AB2004ED6DC /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		D16404B824D96AC7004ED6DC /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		D16404BA24D96ACF004ED6DC /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
-		D16404BC24D96ADC004ED6DC /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		D16404BC24D96ADC004ED6DC /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		D16404BE24D96AE3004ED6DC /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		D16404C024D96AEB004ED6DC /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		D16404C224D96B1B004ED6DC /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
@@ -129,6 +133,10 @@
 		D16404F424D9755D004ED6DC /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DaumMap.framework; path = Undefined/Global/Utils/IOS_DaumMap_SDK_1.4.0/lib/DaumMap.embeddedframework/DaumMap.framework; sourceTree = "<group>"; };
 		D16404FF24D978D7004ED6DC /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		D164050124D978E2004ED6DC /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		D187801024EFA21E00811678 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		D187801624EFA7A800811678 /* ScrollableBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableBottomSheetViewController.swift; sourceTree = "<group>"; };
+		D187801824EFA7BC00811678 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
+		D187801A24EFA82B00811678 /* DefaultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,7 +336,8 @@
 		D16404A224D969D4004ED6DC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D16404BC24D96ADC004ED6DC /* Extension.swift */,
+				D16404BC24D96ADC004ED6DC /* UIViewController+.swift */,
+				D187801024EFA21E00811678 /* UIView+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -346,6 +355,7 @@
 		D16404A424D969E8004ED6DC /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				D187800D24EFA1CE00811678 /* View */,
 				D16404B124D96A70004ED6DC /* Storyboards */,
 				D16404B024D96A6C004ED6DC /* ViewControllers */,
 				D16404AF24D96A69004ED6DC /* Cells */,
@@ -433,6 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				D16404C624D96B51004ED6DC /* MapCell.swift */,
+				D187801A24EFA82B00811678 /* DefaultTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -441,6 +452,8 @@
 			isa = PBXGroup;
 			children = (
 				D16404C824D96B58004ED6DC /* MapVC.swift */,
+				D187801624EFA7A800811678 /* ScrollableBottomSheetViewController.swift */,
+				D187801824EFA7BC00811678 /* BottomSheetViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -534,6 +547,13 @@
 				D16404FF24D978D7004ED6DC /* Login.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		D187800D24EFA1CE00811678 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F5EECF2B25DF1ED6ED20D0AD /* Pods */ = {
@@ -826,14 +846,18 @@
 				D16404C524D96B2C004ED6DC /* SplashVC.swift in Sources */,
 				D16404BF24D96AE3004ED6DC /* Enum.swift in Sources */,
 				D124E32324CD7A9D00F1511D /* AppDelegate.swift in Sources */,
+				D187801724EFA7A800811678 /* ScrollableBottomSheetViewController.swift in Sources */,
+				D187801B24EFA82B00811678 /* DefaultTableViewCell.swift in Sources */,
 				D16404E124D96D1E004ED6DC /* ListVC.swift in Sources */,
+				D187801924EFA7BC00811678 /* BottomSheetViewController.swift in Sources */,
 				D16404C124D96AEB004ED6DC /* Cell.swift in Sources */,
 				D164050224D978E2004ED6DC /* LoginVC.swift in Sources */,
 				D124E32524CD7A9D00F1511D /* SceneDelegate.swift in Sources */,
-				D16404BD24D96ADC004ED6DC /* Extension.swift in Sources */,
+				D16404BD24D96ADC004ED6DC /* UIViewController+.swift in Sources */,
 				D16404D524D96B97004ED6DC /* SearchVC.swift in Sources */,
 				D16404E324D96D29004ED6DC /* List.swift in Sources */,
 				D16404CD24D96B6B004ED6DC /* ProfileCell.swift in Sources */,
+				D187801124EFA21E00811678 /* UIView+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1026,6 +1050,7 @@
 				);
 				INFOPLIST_FILE = "Undefined/Global/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				Kakao_Key = 64a38a5359674b151b12cecd848da731;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1058,6 +1083,7 @@
 				);
 				INFOPLIST_FILE = "Undefined/Global/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				Kakao_Key = eab0d5b236c293399f416ae6539914e4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
