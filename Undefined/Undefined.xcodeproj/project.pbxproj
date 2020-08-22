@@ -52,8 +52,8 @@
 		D164050024D978D7004ED6DC /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16404FF24D978D7004ED6DC /* Login.storyboard */; };
 		D164050224D978E2004ED6DC /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D164050124D978E2004ED6DC /* LoginVC.swift */; };
 		D187801124EFA21E00811678 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187801024EFA21E00811678 /* UIView+.swift */; };
-		D187801724EFA7A800811678 /* ScrollableBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187801624EFA7A800811678 /* ScrollableBottomSheetViewController.swift */; };
-		D187801924EFA7BC00811678 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187801824EFA7BC00811678 /* BottomSheetViewController.swift */; };
+		D187801724EFA7A800811678 /* ScrollableBottomSheetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187801624EFA7A800811678 /* ScrollableBottomSheetVC.swift */; };
+		D187801924EFA7BC00811678 /* BottomSheetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187801824EFA7BC00811678 /* BottomSheetVC.swift */; };
 		D187801B24EFA82B00811678 /* DefaultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187801A24EFA82B00811678 /* DefaultTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -134,8 +134,8 @@
 		D16404FF24D978D7004ED6DC /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		D164050124D978E2004ED6DC /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		D187801024EFA21E00811678 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
-		D187801624EFA7A800811678 /* ScrollableBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableBottomSheetViewController.swift; sourceTree = "<group>"; };
-		D187801824EFA7BC00811678 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
+		D187801624EFA7A800811678 /* ScrollableBottomSheetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableBottomSheetVC.swift; sourceTree = "<group>"; };
+		D187801824EFA7BC00811678 /* BottomSheetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetVC.swift; sourceTree = "<group>"; };
 		D187801A24EFA82B00811678 /* DefaultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -452,8 +452,8 @@
 			isa = PBXGroup;
 			children = (
 				D16404C824D96B58004ED6DC /* MapVC.swift */,
-				D187801624EFA7A800811678 /* ScrollableBottomSheetViewController.swift */,
-				D187801824EFA7BC00811678 /* BottomSheetViewController.swift */,
+				D187801624EFA7A800811678 /* ScrollableBottomSheetVC.swift */,
+				D187801824EFA7BC00811678 /* BottomSheetVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -846,10 +846,10 @@
 				D16404C524D96B2C004ED6DC /* SplashVC.swift in Sources */,
 				D16404BF24D96AE3004ED6DC /* Enum.swift in Sources */,
 				D124E32324CD7A9D00F1511D /* AppDelegate.swift in Sources */,
-				D187801724EFA7A800811678 /* ScrollableBottomSheetViewController.swift in Sources */,
+				D187801724EFA7A800811678 /* ScrollableBottomSheetVC.swift in Sources */,
 				D187801B24EFA82B00811678 /* DefaultTableViewCell.swift in Sources */,
 				D16404E124D96D1E004ED6DC /* ListVC.swift in Sources */,
-				D187801924EFA7BC00811678 /* BottomSheetViewController.swift in Sources */,
+				D187801924EFA7BC00811678 /* BottomSheetVC.swift in Sources */,
 				D16404C124D96AEB004ED6DC /* Cell.swift in Sources */,
 				D164050224D978E2004ED6DC /* LoginVC.swift in Sources */,
 				D124E32524CD7A9D00F1511D /* SceneDelegate.swift in Sources */,

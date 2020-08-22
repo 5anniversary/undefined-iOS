@@ -9,7 +9,7 @@
 
 import UIKit
 
-class ScrollableBottomSheetViewController: UIViewController {
+class ScrollableBottomSheetVC: UIViewController {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -29,15 +29,20 @@ class ScrollableBottomSheetViewController: UIViewController {
 //
 //        searchBar.isUserInteractionEnabled = false
         
-        let gesture = UIPanGestureRecognizer.init(target: self,
-                                                  action: #selector(ScrollableBottomSheetViewController.panGesture))
+        let gesture =
+            UIPanGestureRecognizer.init(target: self,
+                                        action: #selector(ScrollableBottomSheetVC.panGesture))
         gesture.delegate = self
+        
         view.addGestureRecognizer(gesture)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         prepareBackgroundView()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -46,7 +51,10 @@ class ScrollableBottomSheetViewController: UIViewController {
         UIView.animate(withDuration: 0.6, animations: { [weak self] in
             let frame = self?.view.frame
             let yComponent = self?.partialView
-            self?.view.frame = CGRect(x: 0, y: yComponent!, width: frame!.width, height: frame!.height - 100)
+            self?.view.frame = CGRect(x: 0,
+                                      y: yComponent!,
+                                      width: frame!.width,
+                                      height: frame!.height - 100)
             })
     }
 
@@ -62,24 +70,43 @@ class ScrollableBottomSheetViewController: UIViewController {
 
         let y = self.view.frame.minY
         if (y + translation.y >= fullView) && (y + translation.y <= partialView) {
-            self.view.frame = CGRect(x: 0, y: y + translation.y, width: view.frame.width, height: view.frame.height)
-            recognizer.setTranslation(CGPoint.zero, in: self.view)
+            self.view.frame = CGRect(x: 0,
+                                     y: y + translation.y,
+                                     width: view.frame.width,
+                                     height: view.frame.height)
+            
+            recognizer.setTranslation(CGPoint.zero,
+                                      in: self.view)
         }
         
         if recognizer.state == .ended {
-            var duration =  velocity.y < 0 ? Double((y - fullView) / -velocity.y) : Double((partialView - y) / velocity.y )
+            let full = Double((y - fullView) / -velocity.y)
+            let partial = Double((partialView - y) / velocity.y )
+            
+            var duration =  velocity.y < 0 ? full : partial
             
             duration = duration > 1.3 ? 1 : duration
             
-            UIView.animate(withDuration: duration, delay: 0.0, options: [.allowUserInteraction], animations: {
+            UIView.animate(withDuration: duration,
+                           delay: 0.0,
+                           options: [.allowUserInteraction],
+                           animations: {
+                            
                 if  velocity.y >= 0 {
-                    self.view.frame = CGRect(x: 0, y: self.partialView, width: self.view.frame.width, height: self.view.frame.height)
+                    self.view.frame = CGRect(x: 0,
+                                             y: self.partialView,
+                                             width: self.view.frame.width,
+                                             height: self.view.frame.height)
                 } else {
-                    self.view.frame = CGRect(x: 0, y: self.fullView, width: self.view.frame.width, height: self.view.frame.height)
+                    self.view.frame = CGRect(x: 0,
+                                             y: self.fullView,
+                                             width: self.view.frame.width,
+                                             height: self.view.frame.height)
                 }
                 
                 }, completion: { [weak self] _ in
                     if ( velocity.y < 0 ) {
+                        print("테이블뷰 구성 되면 넣어주세요")
 //                        self?.tableView.isScrollEnabled = true
                     }
             })
@@ -99,7 +126,7 @@ class ScrollableBottomSheetViewController: UIViewController {
 
 }
 
-extension ScrollableBottomSheetViewController: UITableViewDelegate, UITableViewDataSource {
+extension ScrollableBottomSheetVC: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -118,14 +145,16 @@ extension ScrollableBottomSheetViewController: UITableViewDelegate, UITableViewD
     }
 }
 
-extension ScrollableBottomSheetViewController: UIGestureRecognizerDelegate {
+extension ScrollableBottomSheetVC: UIGestureRecognizerDelegate {
 
     // Solution
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
+                           shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         let gesture = (gestureRecognizer as! UIPanGestureRecognizer)
         let direction = gesture.velocity(in: view).y
 
         let y = view.frame.minY
+        
         if (y == fullView && tableView.contentOffset.y == 0 && direction > 0) || (y == partialView) {
             tableView.isScrollEnabled = false
         } else {

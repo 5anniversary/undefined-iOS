@@ -75,7 +75,7 @@ class MapVC: UIViewController {
     
     
     func addBottomSheetView(scrollable: Bool? = true) {
-        let bottomSheetVC = scrollable! ? ScrollableBottomSheetViewController() : BottomSheetViewController()
+        let bottomSheetVC = scrollable! ? ScrollableBottomSheetVC() : BottomSheetVC()
         
         self.addChild(bottomSheetVC)
         self.view.addSubview(bottomSheetVC.view)
