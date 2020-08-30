@@ -15,9 +15,7 @@ import Then
 class LoginVC: UIViewController {
 
     let appleLoginButton = ASAuthorizationAppleIDButton(type: .continue, style: .black)
-    
-    var apiURL: String?
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,19 +23,9 @@ class LoginVC: UIViewController {
         
         constraint()
         
-        apiURL = url()
-        print(apiURL)
+        print(APIConstants.BaseURL)
     }
     
-    private func url() -> String? {
-        if let path = Bundle.main.path(forResource: "Info", ofType: "plist") {
-            let dictRoot = NSDictionary(contentsOfFile: path)
-            if let dict = dictRoot {
-                return dict["API_URL"] as? String
-            }
-        }
-        return nil
-    }
     
     
     func constraint(){

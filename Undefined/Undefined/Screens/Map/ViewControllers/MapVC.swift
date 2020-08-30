@@ -50,8 +50,8 @@ class MapVC: UIViewController {
         $0.showAnimationType = .noAnimation
         $0.tag = 5
     }
-
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,10 +69,23 @@ class MapVC: UIViewController {
         
         mapView.addPOIItems([po1])
         mapView.fitAreaToShowAllPOIItems()
+        
+        addBottomSheetView(scrollable: true)
+    }
+    
+    
+    func addBottomSheetView(scrollable: Bool? = true) {
+        let bottomSheetVC = scrollable! ? ScrollableBottomSheetVC() : BottomSheetVC()
+        
+        self.addChild(bottomSheetVC)
+        self.view.addSubview(bottomSheetVC.view)
+        bottomSheetVC.didMove(toParent: self)
+
+        let height = view.frame.height
+        let width  = view.frame.width
+        bottomSheetVC.view.frame = CGRect(x: 0, y: self.view.frame.maxY, width: width, height: height)
     }
 
 }
 
-extension MapVC: MTMapViewDelegate {
-    
-}
+extension MapVC: MTMapViewDelegate {}

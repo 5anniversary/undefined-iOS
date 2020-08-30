@@ -10,4 +10,15 @@ import Foundation
 
 struct APIConstants {
     
+    static var BaseURL: String {
+        if let path = Bundle.main.path(forResource: "Info", ofType: "plist") {
+            let dictRoot = NSDictionary(contentsOfFile: path)
+            if let dict = dictRoot {
+                return dict["API_URL"] as? String ?? ""
+            }
+            return dictRoot?["API_URL"] as? String ?? ""
+        }
+        return ""
+    }
+    
 }
