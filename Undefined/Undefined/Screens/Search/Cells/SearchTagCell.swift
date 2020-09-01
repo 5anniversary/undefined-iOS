@@ -23,10 +23,17 @@ class SearchTagCell: UICollectionViewCell {
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
         }
+        
+        setUI()
+    }
+    
+    func setUI() {
+        self.nameLabel.textColor = .white
     }
     
     func setData(viewModel: SearchTagCellViewModel) {
-        self.nameLabel.text = viewModel.name
+        guard let unwrappedName = viewModel.name else { return }
+        self.nameLabel.text = "#" + unwrappedName
     }
     
     required init?(coder: NSCoder) {
