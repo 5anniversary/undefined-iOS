@@ -9,16 +9,16 @@
 import Foundation
 
 struct SearchViewModel {
-    var cellViewModels: [SearchTagCellViewModel] = [SearchTagCellViewModel]()
+    var tagViewModels: [SearchKeywordCellViewModel] = [SearchKeywordCellViewModel]()
+    var recentKeywordViewModels: [SearchKeywordCellViewModel] = [SearchKeywordCellViewModel]()
     
     mutating func setDummyData() {
-        cellViewModels.append(SearchTagCellViewModel(model: SearchTagModel(name: "성수맛집맛집맛집맛집맛집맛집맛집맛집맛집맛집맛집맛집")))
-        cellViewModels.append(SearchTagCellViewModel(model: SearchTagModel(name: "성수카페")))
-        cellViewModels.append(SearchTagCellViewModel(model: SearchTagModel(name: "성수동 치킨")))
-        cellViewModels.append(SearchTagCellViewModel(model: SearchTagModel(name: "성수")))
-        cellViewModels.append(SearchTagCellViewModel(model: SearchTagModel(name: "성수동 핫플")))
-        cellViewModels.append(SearchTagCellViewModel(model: SearchTagModel(name: "성수동 카페거리")))
-        cellViewModels.append(SearchTagCellViewModel(model: SearchTagModel(name: "성수술집")))
+        let keywords: [String] = ["성수맛집","성수카페","성수동 치킨","성수","성수동 핫플","성수동 카페거리","성수술집"]
+        
+        tagViewModels = keywords.map { (keyword) -> SearchKeywordCellViewModel in
+            let model = SearchKeywordModel(keyword: keyword)
+            return SearchKeywordCellViewModel(model: model)
+        }
     }
     
     init() {

@@ -8,9 +8,11 @@
 
 import UIKit
 import SnapKit
+import RxCocoa
+import RxSwift
 
 class SearchTagCell: UICollectionViewCell {
-    var viewModel: SearchTagCellViewModel?
+    var viewModel: SearchKeywordCellViewModel?
     var nameLabel: UILabel = UILabel()
     
     override init(frame: CGRect) {
@@ -21,10 +23,10 @@ class SearchTagCell: UICollectionViewCell {
             make.center.equalTo(self.contentView)
         }
         
-        setUI()
+        configureUI()
     }
     
-    func setUI() {
+    func configureUI() {
         self.backgroundColor = UIColor(red: 224.0/255.0,
                                        green: 224.0/255.0,
                                        blue: 224.0/255.0,
@@ -38,8 +40,8 @@ class SearchTagCell: UICollectionViewCell {
                                            alpha: 1.0)
     }
     
-    func setData(viewModel: SearchTagCellViewModel) {
-        guard let unwrappedName = viewModel.name else { return }
+    func setData(viewModel: SearchKeywordCellViewModel) {
+        guard let unwrappedName = viewModel.keyword else { return }
         self.nameLabel.text = "#" + unwrappedName
     }
     

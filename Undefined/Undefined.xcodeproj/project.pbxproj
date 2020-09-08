@@ -10,11 +10,12 @@
 		0DFD03A0CCB02DD4943B3B01 /* Pods_Undefined_UndefinedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E0239B43570DF8B0127E923 /* Pods_Undefined_UndefinedUITests.framework */; };
 		8F707CC456867B21C78DB523 /* Pods_Undefined.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D2E8BFF990FC2E24B03407 /* Pods_Undefined.framework */; };
 		C438358324FE86A900359B98 /* SearchTagFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C438358224FE86A900359B98 /* SearchTagFlowLayout.swift */; };
-		C49D4AE524FD20A2009E4B89 /* SearchTagCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49D4AE424FD20A2009E4B89 /* SearchTagCellViewModel.swift */; };
+		C49D4AE524FD20A2009E4B89 /* SearchKeywordCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49D4AE424FD20A2009E4B89 /* SearchKeywordCellViewModel.swift */; };
 		C49D4AE724FD2640009E4B89 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49D4AE624FD2640009E4B89 /* SearchViewModel.swift */; };
 		C4A3E94624FB79B700FDFCB8 /* TabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A3E94524FB79B700FDFCB8 /* TabbarVC.swift */; };
 		C4A58C4C24FE6DFE00F583EA /* SearchSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A58C4B24FE6DFE00F583EA /* SearchSectionHeader.swift */; };
 		C4B64E8C24FFD6B400636D16 /* SearchResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B64E8B24FFD6B400636D16 /* SearchResultVC.swift */; };
+		C4DFB5B92507AEC800B8B305 /* SearchRecentKeywordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DFB5B82507AEC800B8B305 /* SearchRecentKeywordCell.swift */; };
 		D124E32324CD7A9D00F1511D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D124E32224CD7A9D00F1511D /* AppDelegate.swift */; };
 		D124E32724CD7A9D00F1511D /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D124E32624CD7A9D00F1511D /* MainVC.swift */; };
 		D124E32D24CD7A9D00F1511D /* Undefined.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D124E32B24CD7A9D00F1511D /* Undefined.xcdatamodeld */; };
@@ -87,11 +88,12 @@
 		C1B4A0D444E8FC785927C39C /* Pods-Undefined-UndefinedUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Undefined-UndefinedUITests.release.xcconfig"; path = "Target Support Files/Pods-Undefined-UndefinedUITests/Pods-Undefined-UndefinedUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C3EDFB67694FDF2446EB7491 /* Pods-UndefinedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UndefinedTests.debug.xcconfig"; path = "Target Support Files/Pods-UndefinedTests/Pods-UndefinedTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C438358224FE86A900359B98 /* SearchTagFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagFlowLayout.swift; sourceTree = "<group>"; };
-		C49D4AE424FD20A2009E4B89 /* SearchTagCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagCellViewModel.swift; sourceTree = "<group>"; };
+		C49D4AE424FD20A2009E4B89 /* SearchKeywordCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchKeywordCellViewModel.swift; sourceTree = "<group>"; };
 		C49D4AE624FD2640009E4B89 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		C4A3E94524FB79B700FDFCB8 /* TabbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarVC.swift; sourceTree = "<group>"; };
 		C4A58C4B24FE6DFE00F583EA /* SearchSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSectionHeader.swift; sourceTree = "<group>"; };
 		C4B64E8B24FFD6B400636D16 /* SearchResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultVC.swift; sourceTree = "<group>"; };
+		C4DFB5B82507AEC800B8B305 /* SearchRecentKeywordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecentKeywordCell.swift; sourceTree = "<group>"; };
 		D11D521D24E5A13700683870 /* Platz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Platz.entitlements; sourceTree = "<group>"; };
 		D124E31F24CD7A9D00F1511D /* Platz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Platz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D124E32224CD7A9D00F1511D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 			isa = PBXGroup;
 			children = (
 				D16404D224D96B88004ED6DC /* SearchTagCell.swift */,
+				C4DFB5B82507AEC800B8B305 /* SearchRecentKeywordCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -408,7 +411,7 @@
 			children = (
 				D16404D424D96B97004ED6DC /* SearchVC.swift */,
 				C49D4AE624FD2640009E4B89 /* SearchViewModel.swift */,
-				C49D4AE424FD20A2009E4B89 /* SearchTagCellViewModel.swift */,
+				C49D4AE424FD20A2009E4B89 /* SearchKeywordCellViewModel.swift */,
 				C4A58C4B24FE6DFE00F583EA /* SearchSectionHeader.swift */,
 				C438358224FE86A900359B98 /* SearchTagFlowLayout.swift */,
 				C4B64E8B24FFD6B400636D16 /* SearchResultVC.swift */,
@@ -842,7 +845,7 @@
 				D124E32724CD7A9D00F1511D /* MainVC.swift in Sources */,
 				D16404B924D96AC7004ED6DC /* Model.swift in Sources */,
 				D16404BB24D96ACF004ED6DC /* Util.swift in Sources */,
-				C49D4AE524FD20A2009E4B89 /* SearchTagCellViewModel.swift in Sources */,
+				C49D4AE524FD20A2009E4B89 /* SearchKeywordCellViewModel.swift in Sources */,
 				D16404C524D96B2C004ED6DC /* SplashVC.swift in Sources */,
 				D16404BF24D96AE3004ED6DC /* Enum.swift in Sources */,
 				C4B64E8C24FFD6B400636D16 /* SearchResultVC.swift in Sources */,
@@ -859,6 +862,7 @@
 				D16404BD24D96ADC004ED6DC /* UIViewController+.swift in Sources */,
 				D16404D524D96B97004ED6DC /* SearchVC.swift in Sources */,
 				D16404E324D96D29004ED6DC /* List.swift in Sources */,
+				C4DFB5B92507AEC800B8B305 /* SearchRecentKeywordCell.swift in Sources */,
 				C49D4AE724FD2640009E4B89 /* SearchViewModel.swift in Sources */,
 				D16404CD24D96B6B004ED6DC /* ProfileCell.swift in Sources */,
 				D187801124EFA21E00811678 /* UIView+.swift in Sources */,

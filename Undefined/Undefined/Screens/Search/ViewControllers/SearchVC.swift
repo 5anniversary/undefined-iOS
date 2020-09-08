@@ -11,7 +11,6 @@ import SnapKit
 import RxCocoa
 import RxSwift
 
-let cellIdentifier = "SearchTagCell"
 class SearchVC: UIViewController {
     var disposeBag: DisposeBag = DisposeBag()
     var viewModel: SearchViewModel = SearchViewModel()
@@ -54,12 +53,13 @@ class SearchVC: UIViewController {
         let tagLayout = SearchTagFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: tagLayout)
         collectionView.backgroundColor = .white
-        collectionView.register(SearchTagCell.self, forCellWithReuseIdentifier: cellIdentifier)
+        collectionView.register(SearchTagCell.self, forCellWithReuseIdentifier: "SearchTagCell")
+        collectionView.register(SearchRecentKeywordCell.self, forCellWithReuseIdentifier: "SearchRecentKeywordCell")
         collectionView.register(SearchSectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SearchSectionHeader")
         
         return collectionView
     }()
-    
+    let resultViewController = SearchResultVC()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,11 +77,13 @@ class SearchVC: UIViewController {
     
     private func configureUI() {
         self.view.backgroundColor = .white
-        
         self.collectionView.backgroundColor = .white
         self.view.addSubview(searchBarContainerView)
         self.searchBarContainerView.addSubview(searchBar)
+        
+        self.view.addSubview(resultViewController.view)
         self.view.addSubview(collectionView)
+        self.searchBar.becomeFirstResponder()
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -103,19 +105,44 @@ class SearchVC: UIViewController {
         }
         
         self.collectionView.snp.makeConstraints({ make in
-            make.top.equalTo(searchBarContainerView.snp.bottom).offset(37)
+            make.top.equalTo(searchBarContainerView.snp.bottom).offset(31)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         })
+        
+        self.resultViewController.view.snp.makeConstraints { make in
+            make.top.equalTo(searchBarContainerView.snp.bottom).offset(31)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
     }
 
     private func configureEventBinding() {
         self.searchBar.rx.searchButtonClicked.asDriver(onErrorJustReturn: ())
             .drive(onNext: { [weak self] in
-                self?.navigationController?.pushViewController(SearchResultVC(), animated: true)
-                self?.searchBar.resignFirstResponder()
+                let keyword = self?.searchBar.searchTextField.text
+                self?.search(keyword: keyword)
             }).disposed(by: disposeBag)
+        
+        self.searchBar.searchTextField.rx.controlEvent([.editingDidBegin])
+            .asDriver(onErrorJustReturn: ())
+            .drive(onNext: {
+                self.view.bringSubviewToFront(self.collectionView)
+            }).disposed(by: disposeBag)
+    }
+    
+    func search(keyword: String?) {
+        if !(keyword?.trimmingCharacters(in: .whitespaces).isEmpty ?? true) {
+            self.view.bringSubviewToFront(resultViewController.view)
+            self.searchBar.resignFirstResponder()
+            
+            let keywordModel = SearchKeywordModel(keyword: keyword)
+            let keywordViewModel = SearchKeywordCellViewModel(model: keywordModel)
+            self.viewModel.recentKeywordViewModels.insert(keywordViewModel, at: 0)
+            self.collectionView.reloadData()
+        }
     }
 }
 
@@ -127,7 +154,11 @@ extension SearchVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
             if let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SearchSectionHeader", for: indexPath) as? SearchSectionHeader {
-                sectionHeader.headerTitle.text = "추천 태그"
+                if indexPath.section == 0 {
+                    sectionHeader.headerTitle.text = "추천 태그"
+                } else if indexPath.section == 1 {
+                    sectionHeader.headerTitle.text = "최신 검색어"
+                }
                 return sectionHeader
             }
         }
@@ -135,21 +166,46 @@ extension SearchVC: UICollectionViewDelegate {
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        1
+        return 2
     }
 }
 
 extension SearchVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.cellViewModels.count 
+        if section == 0 {
+            return viewModel.tagViewModels.count
+        } else {
+            return viewModel.recentKeywordViewModels.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? SearchTagCell else { return UICollectionViewCell() }
         
-        cell.setData(viewModel: viewModel.cellViewModels[indexPath.row])
-        return cell
+        if indexPath.section == 0 {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchTagCell", for: indexPath) as? SearchTagCell else { return UICollectionViewCell() }
+            
+            cell.setData(viewModel: viewModel.tagViewModels[indexPath.row])
+            return cell
+        } else if indexPath.section == 1 {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchRecentKeywordCell", for: indexPath) as? SearchRecentKeywordCell else { return UICollectionViewCell() }
+            
+            cell.setData(viewModel: viewModel.recentKeywordViewModels[indexPath.row])
+            return cell
+        }
+        
+        return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        var keyword: String?
+        if indexPath.section == 0 {
+            keyword = viewModel.tagViewModels[indexPath.item].keyword
+        } else if indexPath.section == 1 {
+            keyword = viewModel.recentKeywordViewModels[indexPath.item].keyword
+        }
+        
+        self.search(keyword: keyword)
     }
 }
 
@@ -159,10 +215,18 @@ extension SearchVC: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        guard let keyword = viewModel.cellViewModels[indexPath.row].name else { return CGSize.zero }
         
-        let size = "#\(keyword)".size(withAttributes: [.font:UIFont.systemFont(ofSize: 13)])
+        if indexPath.section == 0 {
+            guard let keyword = viewModel.tagViewModels[indexPath.row].keyword else { return CGSize.zero }
+            
+            let size = "#\(keyword)".size(withAttributes: [.font:UIFont.systemFont(ofSize: 13)])
+            
+            return CGSize(width: size.width + 18, height: 32)
+        } else if indexPath.section == 1 {
+            let marginLeftRight: CGFloat = 36
+            return CGSize(width: collectionView.frame.width - marginLeftRight, height: 24)
+        }
         
-        return CGSize(width: size.width + 18, height: 32)
+        return CGSize.zero
     }
 }

@@ -8,15 +8,15 @@
 
 import Foundation
 
-struct SearchTagModel {
-    var name: String?
+struct SearchKeywordModel {
+    var keyword: String?
 }
 
-struct SearchTagCellViewModel {
-    var name: String?
+struct SearchKeywordCellViewModel {
+    var keyword: String?
     
-    init(model: SearchTagModel) {
-        self.name = model.name
+    init(model: SearchKeywordModel) {
+        self.keyword = model.keyword
     }
     
 }

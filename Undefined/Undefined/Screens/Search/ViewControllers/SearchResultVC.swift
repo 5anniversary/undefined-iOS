@@ -23,6 +23,7 @@ class SearchResultVC: UIViewController {
         }
         
         self.view.addSubview(button)
+        self.view.backgroundColor = .brown
     }
     
 }
