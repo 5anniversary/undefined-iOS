@@ -18,17 +18,24 @@ class SearchTagCell: UICollectionViewCell {
         
         self.addSubview(nameLabel)
         nameLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.bottom.equalToSuperview()
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
+            make.center.equalTo(self.contentView)
         }
         
         setUI()
     }
     
     func setUI() {
-        self.nameLabel.textColor = .white
+        self.backgroundColor = UIColor(red: 224.0/255.0,
+                                       green: 224.0/255.0,
+                                       blue: 224.0/255.0,
+                                       alpha: 1.0)
+        self.layer.cornerRadius = 20
+        
+        self.nameLabel.font = .systemFont(ofSize: 13)
+        self.nameLabel.textColor = UIColor(red: 45.0/255.0,
+                                           green: 45.0/255.0,
+                                           blue: 45.0/255.0,
+                                           alpha: 1.0)
     }
     
     func setData(viewModel: SearchTagCellViewModel) {

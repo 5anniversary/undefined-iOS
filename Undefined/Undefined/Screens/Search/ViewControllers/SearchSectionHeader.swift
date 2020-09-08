@@ -26,8 +26,8 @@ class SearchSectionHeader: UICollectionReusableView {
     }
     
     private func setUI() {
-        headerTitle.font = UIFont.boldSystemFont(ofSize: 18.0)
-        headerTitle.textColor = .white
+        headerTitle.font = UIFont.boldSystemFont(ofSize: 15.0)
+        headerTitle.textColor = .black
     }
     
     required init?(coder: NSCoder) {

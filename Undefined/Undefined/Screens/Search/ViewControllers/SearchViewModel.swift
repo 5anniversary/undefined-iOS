@@ -12,11 +12,13 @@ struct SearchViewModel {
     var cellViewModels: [SearchTagCellViewModel] = [SearchTagCellViewModel]()
     
     mutating func setDummyData() {
-        cellViewModels.append(SearchTagCellViewModel(model: SearchTagModel(name: "가동맛집")))
-        cellViewModels.append(SearchTagCellViewModel(model: SearchTagModel(name: "나동맛집")))
-        cellViewModels.append(SearchTagCellViewModel(model: SearchTagModel(name: "다동맛집")))
-        cellViewModels.append(SearchTagCellViewModel(model: SearchTagModel(name: "라동맛집")))
-        cellViewModels.append(SearchTagCellViewModel(model: SearchTagModel(name: "마동맛집")))
+        cellViewModels.append(SearchTagCellViewModel(model: SearchTagModel(name: "성수맛집맛집맛집맛집맛집맛집맛집맛집맛집맛집맛집맛집")))
+        cellViewModels.append(SearchTagCellViewModel(model: SearchTagModel(name: "성수카페")))
+        cellViewModels.append(SearchTagCellViewModel(model: SearchTagModel(name: "성수동 치킨")))
+        cellViewModels.append(SearchTagCellViewModel(model: SearchTagModel(name: "성수")))
+        cellViewModels.append(SearchTagCellViewModel(model: SearchTagModel(name: "성수동 핫플")))
+        cellViewModels.append(SearchTagCellViewModel(model: SearchTagModel(name: "성수동 카페거리")))
+        cellViewModels.append(SearchTagCellViewModel(model: SearchTagModel(name: "성수술집")))
     }
     
     init() {

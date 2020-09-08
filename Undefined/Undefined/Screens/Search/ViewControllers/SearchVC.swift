@@ -17,10 +17,18 @@ class SearchVC: UIViewController {
     var viewModel: SearchViewModel = SearchViewModel()
     
     var searchBarContainerView: UIView = {
-        let view = UIView.init(frame: .zero)
-        view.layer.cornerRadius = 19.5
-        view.backgroundColor = .white
- 
+        let view = UIView.init(frame: .zero).then {
+            $0.layer.cornerRadius = 19.5
+            $0.backgroundColor = .white
+            
+            $0.layer.shadowOffset = CGSize(width: 0, height: 1.0)
+            $0.layer.shadowOpacity = 0.5
+            $0.layer.shadowRadius = 3.0
+            $0.layer.shadowColor = UIColor(red: 149.0/255.0,
+                                           green: 149.0/255.0,
+                                           blue: 149.0/255.0,
+                                           alpha: 1.0).cgColor
+        }
         return view
     }()
     
@@ -28,7 +36,6 @@ class SearchVC: UIViewController {
         let searchBar = UISearchBar.init(frame: .zero)
         searchBar.backgroundImage = UIImage()
         searchBar.searchTextField.backgroundColor = .white
-        // TODO: string 빼기
         
         searchBar.searchTextField.attributedPlaceholder = NSAttributedString(
             string: "당신의 플라츠를 검색해보세요!",
