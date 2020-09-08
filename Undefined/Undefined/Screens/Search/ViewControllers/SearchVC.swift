@@ -45,7 +45,6 @@ class SearchVC: UIViewController {
     
     var collectionView: UICollectionView = {
         let tagLayout = SearchTagFlowLayout()
-        tagLayout.estimatedItemSize = CGSize(width: 64, height: 20)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: tagLayout)
         collectionView.backgroundColor = .white
         collectionView.register(SearchTagCell.self, forCellWithReuseIdentifier: cellIdentifier)
@@ -57,7 +56,6 @@ class SearchVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // TODO: UIColor 따로 빼기
         
         self.configureUI()
         self.configureConstraints()
@@ -65,16 +63,15 @@ class SearchVC: UIViewController {
         self.configureEventBinding()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
     private func configureUI() {
-        self.view.backgroundColor = UIColor(red: 162.0/255.0,
-                                            green: 62.0/255.0,
-                                            blue: 255.0/255.0,
-                                            alpha: 1.0)
+        self.view.backgroundColor = .white
         
-        self.collectionView.backgroundColor = UIColor(red: 162.0/255.0,
-                                                      green: 62.0/255.0,
-                                                      blue: 255.0/255.0,
-                                                      alpha: 1.0)
+        self.collectionView.backgroundColor = .white
         self.view.addSubview(searchBarContainerView)
         self.searchBarContainerView.addSubview(searchBar)
         self.view.addSubview(collectionView)
@@ -109,6 +106,7 @@ class SearchVC: UIViewController {
     private func configureEventBinding() {
         self.searchBar.rx.searchButtonClicked.asDriver(onErrorJustReturn: ())
             .drive(onNext: { [weak self] in
+                self?.navigationController?.pushViewController(SearchResultVC(), animated: true)
                 self?.searchBar.resignFirstResponder()
             }).disposed(by: disposeBag)
     }
@@ -151,5 +149,13 @@ extension SearchVC: UICollectionViewDataSource {
 extension SearchVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 27.0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        guard let keyword = viewModel.cellViewModels[indexPath.row].name else { return CGSize.zero }
+        
+        let size = "#\(keyword)".size(withAttributes: [.font:UIFont.systemFont(ofSize: 13)])
+        
+        return CGSize(width: size.width + 18, height: 32)
     }
 }

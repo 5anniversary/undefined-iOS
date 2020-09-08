@@ -24,14 +24,12 @@ class TabbarVC: UITabBarController {
                                         tag: 0)
         mainVC.tabBarItem = mainTabItem
         
-        // TODO: 검색화면 탭과 메인 탭에서 검색이 이중으로 진입 가능.
-        //       검색 탭을 없애는 편이 좋을 것 같은데 여쭤봐야겠어요.
         let searchVC = SearchVC()
         let searchTabItem = UITabBarItem(title: "Search",
                                         image: nil,
                                         tag: 1)
         searchVC.tabBarItem = searchTabItem
-        //
+        
         let listVC = ListVC()
         let listTabItem = UITabBarItem(title: "List",
                                         image: nil,
@@ -52,6 +50,12 @@ class TabbarVC: UITabBarController {
 extension TabbarVC : UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         print("selected VC : \(viewController)")
+        if viewController is SearchVC {
+            let searchViewController = UINavigationController(rootViewController: SearchVC())
+            searchViewController.modalPresentationStyle = .fullScreen
+            self.present(searchViewController, animated: true)
+            return false
+        }
         return true
     }
 }

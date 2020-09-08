@@ -36,7 +36,7 @@ class TagRow {
     var attributes = [UICollectionViewLayoutAttributes]()
     var spacing: CGFloat = 0
 
-    init(spacing: CGFloat = 15) {
+    init(spacing: CGFloat = 4.0) {
         self.spacing = spacing
     }
 
@@ -45,10 +45,11 @@ class TagRow {
     }
 
     func setRowX() { // Row의 x 위치 설정
+        let collectionViewInset: CGFloat = 18.0
         var offset = spacing
         
         _ = attributes.map { attribute in
-            attribute.frame.origin.x = CGFloat(offset)
+            attribute.frame.origin.x = collectionViewInset + CGFloat(offset)
             offset += attribute.frame.width + spacing
         }
     }
