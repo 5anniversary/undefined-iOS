@@ -17,17 +17,59 @@ class MainVC: UIViewController {
         $0.backgroundColor = .white
     }
     
+    let searchTextField = UITextField().then {
+        $0.text = "당신의 플라츠를 검색해보세요!"
+        $0.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        $0.textColor = .lightishPurple
+    }
+    
+    let searchButton = UIButton().then {
+        $0.setImage(UIImage(named: "search"), for: .normal)
+    }
+
+        
+    let searchView = UIView().then {
+        $0.backgroundColor = .white
+        $0.layer.cornerRadius = 19.5
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.addSubview(mainListTableView)
+        view.addSubview(searchView)
+        view.addSubview(searchButton)
+        view.addSubview(searchTextField)
+
+        searchView.snp.makeConstraints { (make) in
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(17)
+            make.leading.equalToSuperview().offset(18)
+            make.trailing.equalToSuperview().inset(18)
+            make.height.equalTo(40)
+        }
+
         
+        searchButton.snp.makeConstraints { (make) in
+            make.trailing.equalTo(searchTextField.snp.leading).offset(-6)
+            make.centerY.equalTo(searchView.snp.centerY)
+            make.height.equalTo(20)
+            make.width.equalTo(20)
+        }
+
+        searchTextField.snp.makeConstraints { (make) in
+            make.centerY.equalTo(searchView.snp.centerY)
+            make.centerX.equalTo(searchView.snp.centerX).offset(13)
+            make.width.equalTo(180)
+            make.height.equalTo(20)
+        }
+
         mainListTableView.backgroundView = UIView().then {
             $0.backgroundColor = .white
         }
         
         mainListTableView.snp.makeConstraints { (make) in
-            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(68)
             make.bottom.equalTo(view.safeAreaLayoutGuide)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
@@ -38,6 +80,16 @@ class MainVC: UIViewController {
         mainListTableView.separatorStyle = .none
         mainListTableView.register(MainListTVC.self,
                                    forCellReuseIdentifier: MainListTVC.identifier)
+        
+        searchView.layer.applyShadow(color: UIColor(red: 149/255,
+                                                    green: 149/255,
+                                                    blue: 149/255,
+                                                    alpha: 1),
+                                     alpha: 0.5,
+                                     x: 2,
+                                     y: 3,
+                                     blur: 7)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,7 +107,7 @@ extension MainVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView,
                    heightForHeaderInSection section: Int) -> CGFloat {
         
-        return 298
+        return 320
     }
     
     func tableView(_ tableView: UITableView,
@@ -71,7 +123,7 @@ extension MainVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 77
+        return 144
     }
 }
 
@@ -90,6 +142,7 @@ extension MainVC: UITableViewDataSource {
                                                  for: indexPath) as! MainListTVC
         
         cell.setUpLayout()
+        cell.likeButton.isHidden = true
         cell.contentView.backgroundColor = UIColor.white
 
         return cell
