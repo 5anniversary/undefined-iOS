@@ -17,8 +17,8 @@ class TabbarVC: UITabBarController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        let mainVC = MainVC()
+                
+        let mainVC = UINavigationController(rootViewController: MainVC())
         let mainTabItem = UITabBarItem(title: "Main",
                                         image: nil,
                                         tag: 0)
