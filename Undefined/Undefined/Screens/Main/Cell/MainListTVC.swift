@@ -14,16 +14,16 @@ class MainListTVC: UITableViewCell {
 
     static let identifier = "mainListTableCell"
 
-    let emojiView = UIView().then {
-        $0.layer.borderWidth = 4
-        $0.layer.borderColor = UIColor.lightishPurple.cgColor
-        $0.layer.cornerRadius = 11
-        $0.backgroundColor = .white
-    }
+//    let emojiView = UIView().then {
+//        $0.layer.borderWidth = 4
+//        $0.layer.borderColor = UIColor.lightishPurple.cgColor
+//        $0.layer.cornerRadius = 11
+//        $0.backgroundColor = .white
+//    }
     
     let emojiLabel = UILabel().then {
         $0.text = "🍕"
-        $0.font = .systemFont(ofSize: 34)
+        $0.font = .systemFont(ofSize: 40)
     }
     
     let cellBackgroundView = UIView().then {
@@ -32,13 +32,18 @@ class MainListTVC: UITableViewCell {
     }
     
     let titleLabel = UILabel().then {
-        $0.text = "성수동 피자맛집 다로베"
+        $0.text = "죽다가도 모를 피자가게 모음"
         $0.font = UIFont.systemFont(ofSize: 18, weight: .regular)
     }
     
     let locationLabel = UILabel().then {
-        $0.text = "서울 성동구 서울숲길 48 삼호빌딩 1층 다로베"
-        $0.font = UIFont.systemFont(ofSize: 10, weight: .regular)
+        $0.text = "#도미노피자보다 맛있는 #성수피자 #한번만 먹어보세요"
+        $0.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+    }
+    
+    let likeButton = UIButton().then {
+        $0.setTitle("B", for: .normal)
+        $0.setTitleColor(.black, for: .normal)
     }
     
     override func awakeFromNib() {
@@ -54,38 +59,38 @@ class MainListTVC: UITableViewCell {
     
     func setUpLayout(){
         contentView.addSubview(cellBackgroundView)
-        contentView.addSubview(emojiView)
         contentView.addSubview(emojiLabel)
         contentView.addSubview(titleLabel)
         contentView.addSubview(locationLabel)
-        
-        emojiView.snp.makeConstraints { (make) in
-            make.top.equalTo(contentView.snp.top)
-            make.leading.equalTo(contentView.snp.leading).offset(18)
-            make.width.equalTo(62)
-            make.height.equalTo(62)
-        }
-        
-        emojiLabel.snp.makeConstraints { (make) in
-            make.centerX.equalTo(emojiView.snp.centerX)
-            make.centerY.equalTo(emojiView.snp.centerY)
-        }
+        contentView.addSubview(likeButton)
 
         cellBackgroundView.snp.makeConstraints { (make) in
             make.top.equalTo(contentView.snp.top)
-            make.leading.equalTo(contentView.snp.leading).offset(18)
-            make.trailing.equalTo(contentView.snp.trailing).inset(17)
-            make.height.equalTo(62)
+            make.leading.equalTo(contentView.snp.leading).offset(21)
+            make.trailing.equalTo(contentView.snp.trailing).inset(21)
+            make.height.equalTo(130)
+        }
+
+        emojiLabel.snp.makeConstraints { (make) in
+            make.centerX.equalTo(cellBackgroundView.snp.centerX)
+            make.top.equalTo(cellBackgroundView.snp.top).offset(14)
         }
 
         titleLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(cellBackgroundView.snp.top).offset(13)
-            make.leading.equalTo(emojiView.snp.trailing).offset(8)
+            make.top.equalTo(cellBackgroundView.snp.top).offset(71)
+            make.centerX.equalTo(cellBackgroundView.snp.centerX)
         }
 
         locationLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(cellBackgroundView.snp.top).offset(37)
-            make.leading.equalTo(emojiView.snp.trailing).offset(8)
+            make.top.equalTo(titleLabel.snp.bottom).offset(8)
+            make.centerX.equalTo(cellBackgroundView.snp.centerX)
+        }
+        
+        likeButton.snp.makeConstraints { (make) in
+            make.top.equalTo(cellBackgroundView.snp.top).offset(10)
+            make.trailing.equalTo(cellBackgroundView.snp.trailing).offset(-10)
+            make.width.equalTo(20)
+            make.height.equalTo(20)
         }
     }
 }

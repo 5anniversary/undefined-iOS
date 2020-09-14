@@ -53,15 +53,16 @@
 		D16404FA24D976F5004ED6DC /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D16404F024D9723F004ED6DC /* libc++.tbd */; };
 		D164050024D978D7004ED6DC /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16404FF24D978D7004ED6DC /* Login.storyboard */; };
 		D164050224D978E2004ED6DC /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D164050124D978E2004ED6DC /* LoginVC.swift */; };
+		D17F1FD5250FDBE10002F4FD /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17F1FD4250FDBE10002F4FD /* CALayer+.swift */; };
 		D187801124EFA21E00811678 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187801024EFA21E00811678 /* UIView+.swift */; };
 		D187801724EFA7A800811678 /* ScrollableBottomSheetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187801624EFA7A800811678 /* ScrollableBottomSheetVC.swift */; };
 		D187801924EFA7BC00811678 /* BottomSheetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187801824EFA7BC00811678 /* BottomSheetVC.swift */; };
 		D187801B24EFA82B00811678 /* DefaultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187801A24EFA82B00811678 /* DefaultTableViewCell.swift */; };
-		D9E65A759CEC1991D3EDFFFA /* Pods_UndefinedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3841EA504AF0EEF4B3D254 /* Pods_UndefinedTests.framework */; };
 		D19FBDAE2506AF9F006114DB /* MainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FBDAD2506AF9F006114DB /* MainHeaderView.swift */; };
 		D19FBDB22506AFB9006114DB /* MainListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FBDB02506AFB9006114DB /* MainListTVC.swift */; };
 		D19FBDB32506AFB9006114DB /* MainListCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FBDB12506AFB9006114DB /* MainListCVC.swift */; };
 		D1DF0F34250BA0C700BDCE73 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DF0F33250BA0C700BDCE73 /* UIButton+.swift */; };
+		D9E65A759CEC1991D3EDFFFA /* Pods_UndefinedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3841EA504AF0EEF4B3D254 /* Pods_UndefinedTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,15 +143,16 @@
 		D16404F424D9755D004ED6DC /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DaumMap.framework; path = Undefined/Global/Utils/IOS_DaumMap_SDK_1.4.0/lib/DaumMap.embeddedframework/DaumMap.framework; sourceTree = "<group>"; };
 		D16404FF24D978D7004ED6DC /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		D164050124D978E2004ED6DC /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		D17F1FD4250FDBE10002F4FD /* CALayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
 		D187801024EFA21E00811678 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		D187801624EFA7A800811678 /* ScrollableBottomSheetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableBottomSheetVC.swift; sourceTree = "<group>"; };
 		D187801824EFA7BC00811678 /* BottomSheetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetVC.swift; sourceTree = "<group>"; };
 		D187801A24EFA82B00811678 /* DefaultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTableViewCell.swift; sourceTree = "<group>"; };
-		DF8976F5911DAF4B9C0821EF /* Pods-Undefined.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Undefined.debug.xcconfig"; path = "Target Support Files/Pods-Undefined/Pods-Undefined.debug.xcconfig"; sourceTree = "<group>"; };
 		D19FBDAD2506AF9F006114DB /* MainHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainHeaderView.swift; sourceTree = "<group>"; };
 		D19FBDB02506AFB9006114DB /* MainListTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainListTVC.swift; sourceTree = "<group>"; };
 		D19FBDB12506AFB9006114DB /* MainListCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainListCVC.swift; sourceTree = "<group>"; };
 		D1DF0F33250BA0C700BDCE73 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		DF8976F5911DAF4B9C0821EF /* Pods-Undefined.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Undefined.debug.xcconfig"; path = "Target Support Files/Pods-Undefined/Pods-Undefined.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -353,6 +355,7 @@
 				D187801024EFA21E00811678 /* UIView+.swift */,
 				D131621B2500BE14008CE266 /* UIColor+.swift */,
 				D1DF0F33250BA0C700BDCE73 /* UIButton+.swift */,
+				D17F1FD4250FDBE10002F4FD /* CALayer+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -838,7 +841,7 @@
 			files = (
 				D16404CF24D96B73004ED6DC /* ProfileVC.swift in Sources */,
 				D16404D324D96B88004ED6DC /* SearchTagCell.swift in Sources */,
-				D16404D324D96B88004ED6DC /* SearchCell.swift in Sources */,
+				D16404D324D96B88004ED6DC /* SearchTagCell.swift in Sources */,
 				D19FBDB22506AFB9006114DB /* MainListTVC.swift in Sources */,
 				D124E32D24CD7A9D00F1511D /* Undefined.xcdatamodeld in Sources */,
 				D16404B724D96AB2004ED6DC /* APIConstants.swift in Sources */,
@@ -861,9 +864,8 @@
 				D1DF0F34250BA0C700BDCE73 /* UIButton+.swift in Sources */,
 				C4A3E94624FB79B700FDFCB8 /* TabbarVC.swift in Sources */,
 				D187801924EFA7BC00811678 /* BottomSheetVC.swift in Sources */,
-				D16404C124D96AEB004ED6DC /* Cell.swift in Sources */,
+				D17F1FD5250FDBE10002F4FD /* CALayer+.swift in Sources */,
 				D131621C2500BE14008CE266 /* UIColor+.swift in Sources */,
-				C4A3E94D24FB99F000FDFCB8 /* SearchTagCell.swift in Sources */,
 				D164050224D978E2004ED6DC /* LoginVC.swift in Sources */,
 				D16404BD24D96ADC004ED6DC /* UIViewController+.swift in Sources */,
 				D16404D524D96B97004ED6DC /* SearchVC.swift in Sources */,
