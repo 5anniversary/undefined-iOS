@@ -33,18 +33,18 @@ class ScrollableBottomSheetVC: UIViewController {
     
     
     let headerLabel = UILabel().then {
-        $0.text = "장소 목록에 이름"
-        $0.font = .systemFont(ofSize: 20, weight: .regular)
+        $0.text = "죽다가도 모를 피자가게 모음"
+        $0.font = .systemFont(ofSize: 18, weight: .regular)
         $0.textColor = .lightishPurple
-    }
-    
-    let splitBar = UIView().then {
-        $0.backgroundColor = UIColor(red: 216/255, green: 216/255, blue: 216/255, alpha: 1)
     }
     
     let tableHeaderLabel = UILabel().then {
         $0.text = "#성수맛집"
         $0.font = .systemFont(ofSize: 15, weight: .bold)
+    }
+
+    let splitBar = UIView().then {
+        $0.backgroundColor = UIColor(red: 216/255, green: 216/255, blue: 216/255, alpha: 1)
     }
     
     let tableView = UITableView(frame: .zero, style: .grouped).then {
@@ -57,8 +57,8 @@ class ScrollableBottomSheetVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
-        tableView.register(MainListTVC.self,
-                           forCellReuseIdentifier: MainListTVC.identifier)
+        tableView.register(MapCell.self,
+                           forCellReuseIdentifier: MapCell.identifier)
         //        searchBar.isUserInteractionEnabled = false
         
         let gesture =
@@ -190,32 +190,33 @@ extension ScrollableBottomSheetVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView,
                    viewForHeaderInSection section: Int) -> UIView? {
+        
         tableHeaderView.addSubview(headerLabel)
         tableHeaderView.addSubview(splitBar)
         tableHeaderView.addSubview(tableHeaderLabel)
         
         headerLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(tableHeaderView.snp.top).offset(39)
+            make.top.equalTo(tableHeaderView.snp.top).offset(4)
             make.centerX.equalTo(tableHeaderView.snp.centerX)
         }
         
         splitBar.snp.makeConstraints { (make) in
-            make.top.equalTo(tableHeaderView.snp.top).offset(87)
+            make.top.equalTo(tableHeaderView.snp.top).offset(74)
             make.centerX.equalTo(tableHeaderView.snp.centerX)
             make.width.equalTo(tableHeaderView.snp.width)
             make.height.equalTo(1)
         }
         
         tableHeaderLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(tableHeaderView.snp.top).offset(107)
-            make.leading.equalTo(tableHeaderView.snp.leading).offset(18)
+            make.top.equalTo(headerLabel.snp.bottom).offset(10)
+            make.centerX.equalTo(tableHeaderView.snp.centerX)
         }
 
         return tableHeaderView
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        131
+        115
     }
     
     func tableView(_ tableView: UITableView,
@@ -230,12 +231,12 @@ extension ScrollableBottomSheetVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 77
+        return 93
     }
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MainListTVC.identifier,
-                                                 for: indexPath) as! MainListTVC
+        let cell = tableView.dequeueReusableCell(withIdentifier: MapCell.identifier,
+                                                 for: indexPath) as! MapCell
         
         cell.setUpLayout()
         cell.contentView.backgroundColor = UIColor.white
