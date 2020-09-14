@@ -13,7 +13,6 @@ import SnapKit
 
 class MainVC: UIViewController {
 
-    
     let mainListTableView = UITableView(frame: .zero, style: .grouped).then {
         $0.backgroundColor = .white
     }
@@ -40,6 +39,13 @@ class MainVC: UIViewController {
         mainListTableView.register(MainListTVC.self,
                                    forCellReuseIdentifier: MainListTVC.identifier)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        navigationController?.navigationBar.isHidden = true
+        tabBarController?.tabBar.isHidden = false
+    }
 }
 
 
@@ -51,6 +57,7 @@ extension MainVC: UITableViewDelegate {
         
         return 298
     }
+    
     func tableView(_ tableView: UITableView,
                    viewForHeaderInSection section: Int) -> UIView? {
         let view = MainHeaderView()
@@ -86,6 +93,15 @@ extension MainVC: UITableViewDataSource {
         cell.contentView.backgroundColor = UIColor.white
 
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath) {
+        let vc = MapVC()
+        
+        vc.modalPresentationStyle = .overFullScreen
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     
