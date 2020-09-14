@@ -51,13 +51,26 @@ class MapVC: UIViewController {
         $0.tag = 5
     }
     
-    let backButton = UIButton().then {
-        $0.setTitle("<", for: .normal)
+    let backButtonView = UIView().then {
         $0.backgroundColor = .white
-        $0.setTitleColor(.black, for: .normal)
+        $0.layer.cornerRadius = 20
+    }
+    
+    let backButton = UIButton().then {
+        $0.setImage(UIImage(named: "leftArrow"), for: .normal)
         $0.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
     }
     
+    let likeButtonView = UIView().then {
+        $0.backgroundColor = .white
+        $0.layer.cornerRadius = 20
+    }
+    
+    let likeButton = UIButton().then {
+        $0.setImage(UIImage(named: "leftArrow"), for: .normal)
+        $0.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
+    }
+
     var partialView: CGFloat {
         return UIScreen.main.bounds.height - 70
     }
@@ -66,8 +79,11 @@ class MapVC: UIViewController {
         super.viewDidLoad()
         
         view.addSubview(mapView)
+        view.addSubview(backButtonView)
         view.addSubview(backButton)
-        
+        view.addSubview(likeButtonView)
+        view.addSubview(likeButton)
+
         mapView.delegate = self
         mapView.baseMapType = .standard
         mapView.snp.makeConstraints { (make) in
@@ -77,17 +93,36 @@ class MapVC: UIViewController {
             make.bottom.equalToSuperview()
         }
         
+        backButtonView.snp.makeConstraints { (make) in
+            make.top.equalTo(mapView.snp.top).offset(49)
+            make.leading.equalTo(mapView.snp.leading).offset(18)
+            make.height.equalTo(40)
+            make.width.equalTo(40)
+        }
+
         backButton.snp.makeConstraints { (make) in
-            make.top.equalTo(mapView.snp.top).offset(30)
-            make.leading.equalTo(mapView.snp.leading).offset(15)
-            make.height.equalTo(30)
-            make.width.equalTo(30)
+            make.centerX.equalTo(backButtonView.snp.centerX)
+            make.centerY.equalTo(backButtonView.snp.centerY)
+            make.height.equalTo(23)
+            make.width.equalTo(11)
+        }
+        
+        likeButtonView.snp.makeConstraints { (make) in
+            make.top.equalTo(mapView.snp.top).offset(49)
+            make.trailing.equalTo(mapView.snp.trailing).offset(-18)
+            make.height.equalTo(40)
+            make.width.equalTo(40)
+        }
+
+        likeButton.snp.makeConstraints { (make) in
+            make.centerX.equalTo(likeButtonView.snp.centerX)
+            make.centerY.equalTo(likeButtonView.snp.centerY)
+            make.height.equalTo(23)
+            make.width.equalTo(11)
         }
         
         mapView.addPOIItems([po1, po2, po3, po4, po5])
         mapView.fitAreaToShowAllPOIItems()
-        
-        backButton.makeRounded(cornerRadius: 15)
         
         mapView.setZoomLevel(8, animated: false)
         addBottomSheetView(scrollable: true)
