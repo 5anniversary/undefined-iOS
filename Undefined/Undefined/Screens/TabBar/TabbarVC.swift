@@ -50,12 +50,6 @@ class TabbarVC: UITabBarController {
 extension TabbarVC : UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         print("selected VC : \(viewController)")
-        if viewController is SearchVC {
-            let searchViewController = UINavigationController(rootViewController: SearchVC())
-            searchViewController.modalPresentationStyle = .fullScreen
-            self.present(searchViewController, animated: true)
-            return false
-        }
         return true
     }
 }

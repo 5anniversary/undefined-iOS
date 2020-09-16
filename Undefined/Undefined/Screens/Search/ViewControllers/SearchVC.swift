@@ -59,7 +59,7 @@ class SearchVC: UIViewController {
         
         return collectionView
     }()
-    let resultViewController = SearchResultVC()
+    let resultViewController = SearchResultContainerVC()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -141,6 +141,7 @@ class SearchVC: UIViewController {
             let keywordModel = SearchKeywordModel(keyword: keyword)
             let keywordViewModel = SearchKeywordCellViewModel(model: keywordModel)
             self.viewModel.recentKeywordViewModels.insert(keywordViewModel, at: 0)
+            self.searchBar.searchTextField.text = keyword
             self.collectionView.reloadData()
         }
     }
