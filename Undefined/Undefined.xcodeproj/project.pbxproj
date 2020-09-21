@@ -33,7 +33,6 @@
 		D16404C524D96B2C004ED6DC /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16404C424D96B2C004ED6DC /* SplashVC.swift */; };
 		D16404C724D96B51004ED6DC /* MapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16404C624D96B51004ED6DC /* MapCell.swift */; };
 		D16404C924D96B58004ED6DC /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16404C824D96B58004ED6DC /* MapVC.swift */; };
-		D16404CD24D96B6B004ED6DC /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16404CC24D96B6B004ED6DC /* ProfileCell.swift */; };
 		D16404CF24D96B73004ED6DC /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16404CE24D96B73004ED6DC /* ProfileVC.swift */; };
 		D16404D124D96B7A004ED6DC /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16404D024D96B7A004ED6DC /* Profile.storyboard */; };
 		D16404D324D96B88004ED6DC /* SearchTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16404D224D96B88004ED6DC /* SearchTagCell.swift */; };
@@ -57,6 +56,8 @@
 		D187801724EFA7A800811678 /* ScrollableBottomSheetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187801624EFA7A800811678 /* ScrollableBottomSheetVC.swift */; };
 		D187801924EFA7BC00811678 /* BottomSheetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187801824EFA7BC00811678 /* BottomSheetVC.swift */; };
 		D187801B24EFA82B00811678 /* DefaultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187801A24EFA82B00811678 /* DefaultTableViewCell.swift */; };
+		D196E1062518763200001B7A /* ProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D196E1052518763200001B7A /* ProfileTVC.swift */; };
+		D196E1082518771800001B7A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D196E1072518771800001B7A /* ProfileView.swift */; };
 		D19FBDAE2506AF9F006114DB /* MainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FBDAD2506AF9F006114DB /* MainHeaderView.swift */; };
 		D19FBDB22506AFB9006114DB /* MainListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FBDB02506AFB9006114DB /* MainListTVC.swift */; };
 		D19FBDB32506AFB9006114DB /* MainListCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FBDB12506AFB9006114DB /* MainListCVC.swift */; };
@@ -121,7 +122,6 @@
 		D16404C424D96B2C004ED6DC /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		D16404C624D96B51004ED6DC /* MapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCell.swift; sourceTree = "<group>"; };
 		D16404C824D96B58004ED6DC /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
-		D16404CC24D96B6B004ED6DC /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		D16404CE24D96B73004ED6DC /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		D16404D024D96B7A004ED6DC /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		D16404D224D96B88004ED6DC /* SearchTagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagCell.swift; sourceTree = "<group>"; };
@@ -147,6 +147,8 @@
 		D187801624EFA7A800811678 /* ScrollableBottomSheetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableBottomSheetVC.swift; sourceTree = "<group>"; };
 		D187801824EFA7BC00811678 /* BottomSheetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetVC.swift; sourceTree = "<group>"; };
 		D187801A24EFA82B00811678 /* DefaultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTableViewCell.swift; sourceTree = "<group>"; };
+		D196E1052518763200001B7A /* ProfileTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTVC.swift; sourceTree = "<group>"; };
+		D196E1072518771800001B7A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		D19FBDAD2506AF9F006114DB /* MainHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainHeaderView.swift; sourceTree = "<group>"; };
 		D19FBDB02506AFB9006114DB /* MainListTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainListTVC.swift; sourceTree = "<group>"; };
 		D19FBDB12506AFB9006114DB /* MainListCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainListCVC.swift; sourceTree = "<group>"; };
@@ -439,7 +441,7 @@
 		D16404AC24D96A5B004ED6DC /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				D16404CC24D96B6B004ED6DC /* ProfileCell.swift */,
+				D196E1052518763200001B7A /* ProfileTVC.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -448,6 +450,7 @@
 			isa = PBXGroup;
 			children = (
 				D16404CE24D96B73004ED6DC /* ProfileVC.swift */,
+				D196E1072518771800001B7A /* ProfileView.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -843,6 +846,8 @@
 				D19FBDB22506AFB9006114DB /* MainListTVC.swift in Sources */,
 				D124E32D24CD7A9D00F1511D /* Undefined.xcdatamodeld in Sources */,
 				D16404B724D96AB2004ED6DC /* APIConstants.swift in Sources */,
+				D196E1082518771800001B7A /* ProfileView.swift in Sources */,
+				D196E1062518763200001B7A /* ProfileTVC.swift in Sources */,
 				D19FBDAE2506AF9F006114DB /* MainHeaderView.swift in Sources */,
 				D16404C924D96B58004ED6DC /* MapVC.swift in Sources */,
 				D16404C724D96B51004ED6DC /* MapCell.swift in Sources */,
@@ -871,7 +876,6 @@
 				C4DFB5B92507AEC800B8B305 /* SearchRecentKeywordCell.swift in Sources */,
 				C49D4AE724FD2640009E4B89 /* SearchViewModel.swift in Sources */,
 				D19FBDB32506AFB9006114DB /* MainListCVC.swift in Sources */,
-				D16404CD24D96B6B004ED6DC /* ProfileCell.swift in Sources */,
 				D187801124EFA21E00811678 /* UIView+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
