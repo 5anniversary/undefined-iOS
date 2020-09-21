@@ -10,15 +10,19 @@ import UIKit
 
 class ProfileTVC: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    static let identifier = "profileCell"
+    
+    let label = UILabel().then {
+        $0.font = UIFont.systemFont(ofSize: 15, weight: .light)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func layout() {
+        contentView.addSubview(label)
+        
+        label.snp.makeConstraints { (make) in
+            make.leading.equalTo(contentView.snp.leading).offset(28)
+            make.centerY.equalTo(contentView.snp.centerY)
+        }
     }
-
+    
 }

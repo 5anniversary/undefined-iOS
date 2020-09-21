@@ -36,12 +36,12 @@ class TabbarVC: UITabBarController {
                                         tag: 2)
         listVC.tabBarItem = listTabItem
         
-        let profileVC = ProfileVC()
+        let profileVC = UINavigationController(rootViewController: ProfileVC())
         let profileTabItem = UITabBarItem(title: "Profile",
                                         image: nil,
                                         tag: 3)
         profileVC.tabBarItem = profileTabItem
-        
+
         self.viewControllers = [mainVC, searchVC, listVC, profileVC]
     }
     
