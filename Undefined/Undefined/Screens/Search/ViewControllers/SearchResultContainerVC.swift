@@ -26,18 +26,26 @@ class SearchResultContainerVC: UIViewController {
         setupPageViewController()
     }
     
+    func refreshData() {
+        guard let placeVC = viewControllers[0] as? SearchResultPlaceVC else { return }
+        placeVC.collectionView.reloadData()
+    }
+    
     private func setupViewControllers() {
-        viewControllers.append(SearchResultPlaceVC())
-        viewControllers.append(SearchResultPlatzVC())
+        let resultPlaceViewController = SearchResultPlaceVC()
+        let resultPlatzViewController = SearchResultPlatzVC()
+        
+        viewControllers.append(resultPlaceViewController)
+        viewControllers.append(resultPlatzViewController)
     }
     
     private func setupPageViewController() {
         self.pageViewController = UIPageViewController(transitionStyle: .scroll,
                                                        navigationOrientation: .horizontal)
         self.pageViewController?.view.frame = CGRect.init(x: 0,
-                                                          y: 55.0,
+                                                          y: 56.0,
                                                           width: self.view.frame.width,
-                                                          height: self.view.frame.height - 55.0)
+                                                          height: self.view.frame.height - 56.0)
         self.pageViewController.view.backgroundColor = .white
         
         self.addChild(pageViewController)

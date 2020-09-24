@@ -135,6 +135,8 @@ class SearchVC: UIViewController {
     
     func search(keyword: String?) {
         if !(keyword?.trimmingCharacters(in: .whitespaces).isEmpty ?? true) {
+            resultViewController.refreshData()
+            
             self.view.bringSubviewToFront(resultViewController.view)
             self.searchBar.resignFirstResponder()
             
