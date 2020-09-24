@@ -91,7 +91,21 @@ class SearchResultContainerVC: UIViewController {
 }
 
 extension SearchResultContainerVC: UIPageViewControllerDelegate {
-    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        
+        if finished && completed {
+            var index = 0
+            if let vc = pageViewController.viewControllers?.first as? SearchResultPlaceVC {
+                index = vc.pageIndex
+            } else if let vc = pageViewController.viewControllers?.first as? SearchResultPlatzVC {
+                index = vc.pageIndex
+            }
+            let indexPath = IndexPath(item: index, section: 0)
+            menuBar.collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredVertically)
+            menuBar.collectionView.scrollToItem(at: indexPath, at: .centeredVertically, animated: true)
+            
+        }
+    }
 }
 
 extension SearchResultContainerVC: UIPageViewControllerDataSource {

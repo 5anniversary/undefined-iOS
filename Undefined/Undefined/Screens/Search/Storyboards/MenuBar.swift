@@ -107,10 +107,20 @@ class MenuBarCell: UICollectionViewCell {
         return label
     }()
     
+    var indicatorView: UIView = UIView()
+    
     override var isSelected: Bool {
         didSet {
-            print("isSelected: \(isHighlighted)")
-            menuLabel.textColor = isSelected ? .red : .black
+            let deselectedColor = UIColor(red: 155.0/255.0,
+                                          green: 155.0/255.0,
+                                          blue: 155.0/255.0,
+                                          alpha: 1.0)
+            let selectedColor = UIColor(red: 179.0/255.0,
+                                        green: 96.0/255.0,
+                                        blue: 255.0/255.0,
+                                        alpha: 1.0)
+            indicatorView.backgroundColor = self.isSelected ? selectedColor : UIColor.clear
+            menuLabel.textColor = isSelected ? selectedColor : deselectedColor
         }
     }
     
@@ -121,8 +131,15 @@ class MenuBarCell: UICollectionViewCell {
     
     func setupView() {
         self.contentView.addSubview(menuLabel)
+        self.contentView.addSubview(indicatorView)
         menuLabel.snp.makeConstraints { make in
             make.center.equalToSuperview()
+        }
+        indicatorView.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.height.equalTo(3.0)
         }
     }
     
