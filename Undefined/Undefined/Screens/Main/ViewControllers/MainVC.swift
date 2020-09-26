@@ -26,7 +26,6 @@ class MainVC: UIViewController {
     let searchButton = UIButton().then {
         $0.setImage(UIImage(named: "search"), for: .normal)
     }
-
         
     let searchView = UIView().then {
         $0.backgroundColor = .white
