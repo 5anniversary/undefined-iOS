@@ -19,7 +19,7 @@ class MainVC: UIViewController {
     
     let searchTextField = UITextField().then {
         $0.text = "당신의 플라츠를 검색해보세요!"
-        $0.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        $0.font = Font.regular.of(size: 14)
         $0.textColor = .lightishPurple
     }
     

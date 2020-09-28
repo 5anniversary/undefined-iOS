@@ -2,6 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Spoqa_Han_Sans_Bold.ttf</string>
+		<string>Spoqa_Han_Sans_Light.ttf</string>
+		<string>Spoqa_Han_Sans_Regular.ttf</string>
+		<string>Spoqa_Han_Sans_Thin.ttf</string>
+	</array>
 	<key>API_URL</key>
 	<string>$(API_URL)</string>
 	<key>CFBundleDevelopmentRegion</key>
