@@ -12,13 +12,16 @@ class MainListCVC: UICollectionViewCell {
     static let identifier = "mainListCollectionCell"
     
     let userImageView = UIImageView().then {
-        $0.backgroundColor = UIColor(red: 227/255, green: 227/255, blue: 227/255, alpha: 1)
+        $0.backgroundColor = UIColor(red: 227/255,
+                                     green: 227/255,
+                                     blue: 227/255,
+                                     alpha: 1)
         $0.layer.cornerRadius = 33
     }
     
     let nameLabel = UILabel().then {
         $0.text = "윤우식"
-        $0.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        $0.font = Font.regular.of(size: 12)
     }
     
     func setUpLayout(){

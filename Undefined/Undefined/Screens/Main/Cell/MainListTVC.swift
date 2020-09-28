@@ -8,18 +8,9 @@
 
 import UIKit
 
-
-
 class MainListTVC: UITableViewCell {
 
     static let identifier = "mainListTableCell"
-
-//    let emojiView = UIView().then {
-//        $0.layer.borderWidth = 4
-//        $0.layer.borderColor = UIColor.lightishPurple.cgColor
-//        $0.layer.cornerRadius = 11
-//        $0.backgroundColor = .white
-//    }
     
     let emojiLabel = UILabel().then {
         $0.text = "🍕"
