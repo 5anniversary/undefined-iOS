@@ -47,7 +47,6 @@ class MainVC: UIViewController {
             make.trailing.equalToSuperview().inset(18)
             make.height.equalTo(40)
         }
-
         
         searchButton.snp.makeConstraints { (make) in
             make.trailing.equalTo(searchTextField.snp.leading).offset(-6)
@@ -89,6 +88,9 @@ class MainVC: UIViewController {
                                      y: 3,
                                      blur: 7)
 
+        mainListTableView.layer.borderColor = UIColor.veryLightPinkTwo.cgColor
+        mainListTableView.layer.borderWidth = 1
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
