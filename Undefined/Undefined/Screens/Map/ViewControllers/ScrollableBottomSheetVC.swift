@@ -17,7 +17,7 @@ class ScrollableBottomSheetVC: UIViewController {
     //    @IBOutlet weak var tableView: UITableView!
     //    @IBOutlet weak var searchBar: UISearchBar!
     
-    let fullView: CGFloat = UIScreen.main.bounds.height / 2
+    let fullView: CGFloat = UIScreen.main.bounds.height / 10 * 2
     
     var partialView: CGFloat {
         return UIScreen.main.bounds.height - 70
@@ -112,7 +112,7 @@ class ScrollableBottomSheetVC: UIViewController {
             make.top.equalToSuperview().offset(16)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
-            make.height.equalTo(view.frame.height / 2)
+            make.height.equalTo(view.frame.height / 10 * 8)
         }
         
     }
