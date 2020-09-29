@@ -15,41 +15,7 @@ class MapVC: UIViewController {
                         animated: true)
     }
     
-    let po1 = MTMapPOIItem().then{
-        $0.markerType = .redPin
-        $0.mapPoint = .init(geoCoord: .init(latitude: 37.517229, longitude: 127.005525))
-        $0.showAnimationType = .noAnimation
-        $0.tag = 1
-        $0.customImageName = "map_pin"
-    }
-    
-    let po2 = MTMapPOIItem().then{
-        $0.markerType = .redPin
-        $0.mapPoint = .init(geoCoord: .init(latitude: 37.537229, longitude: 127.005525))
-        $0.showAnimationType = .noAnimation
-        $0.tag = 2
-    }
-    
-    let po3 = MTMapPOIItem().then{
-        $0.markerType = .redPin
-        $0.mapPoint = .init(geoCoord: .init(latitude: 37.537229, longitude: 127.025525))
-        $0.showAnimationType = .noAnimation
-        $0.tag = 3
-    }
-    
-    let po4 = MTMapPOIItem().then{
-        $0.markerType = .redPin
-        $0.mapPoint = .init(geoCoord: .init(latitude: 37.537229, longitude: 127.105525))
-        $0.showAnimationType = .noAnimation
-        $0.tag = 4
-    }
-    
-    let po5 = MTMapPOIItem().then {
-        $0.markerType = .redPin
-        $0.mapPoint = .init(geoCoord: .init(latitude: 37.437210, longitude: 127.005525))
-        $0.showAnimationType = .noAnimation
-        $0.tag = 5
-    }
+    var poList: [MTMapPOIItem] = []
     
     let backButtonView = UIView().then {
         $0.backgroundColor = .white
@@ -120,8 +86,17 @@ class MapVC: UIViewController {
             make.height.equalTo(23)
             make.width.equalTo(11)
         }
+        var num = 0.001
         
-        mapView.addPOIItems([po1, po2, po3, po4, po5])
+        for i in 0 ..< 6 {
+            let po = MTMapPOIItem()
+            po.setPoint(37.437210 + num, 127.005525 + num, i)
+            num += num
+            
+            poList.append(po)
+        }
+        
+        mapView.addPOIItems(poList)
         mapView.fitAreaToShowAllPOIItems()
         
         mapView.setZoomLevel(8, animated: false)
