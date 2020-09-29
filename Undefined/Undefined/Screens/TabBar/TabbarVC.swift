@@ -30,7 +30,7 @@ class TabbarVC: UITabBarController {
                                         tag: 1)
         searchVC.tabBarItem = searchTabItem
         
-        let listVC = ListVC()
+        let listVC = UINavigationController(rootViewController: ListVC())
         let listTabItem = UITabBarItem(title: "List",
                                         image: nil,
                                         tag: 2)

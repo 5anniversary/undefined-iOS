@@ -143,6 +143,7 @@ extension MainVC: UITableViewDataSource {
                                                  for: indexPath) as! MainListTVC
         
         cell.setUpLayout()
+        cell.rootVC = self
         cell.likeButton.isHidden = true
         cell.contentView.backgroundColor = UIColor.white
 

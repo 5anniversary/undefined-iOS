@@ -65,10 +65,11 @@ extension ProfileVC {
 extension ProfileVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView,
                    heightForHeaderInSection section: Int) -> CGFloat {
-        return 249
+        return 170
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView,
+                   heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 32
     }
 }
@@ -97,6 +98,7 @@ extension ProfileVC: UITableViewDataSource {
         
         cell.label.text = data[indexPath.row]
         cell.layout()
+        cell.contentView.backgroundColor = .white
         
         return cell
     }

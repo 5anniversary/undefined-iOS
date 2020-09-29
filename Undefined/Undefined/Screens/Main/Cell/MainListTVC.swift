@@ -11,6 +11,8 @@ import UIKit
 class MainListTVC: UITableViewCell {
 
     static let identifier = "mainListTableCell"
+
+    // MARK: - UI Components
     
     let emojiLabel = UILabel().then {
         $0.text = "🍕"
@@ -37,6 +39,12 @@ class MainListTVC: UITableViewCell {
         $0.setTitleColor(.black, for: .normal)
     }
     
+    // MARK: - Variables and Properties
+    
+    var rootVC: UIViewController?
+    
+    // MARK: - Life Cycle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -44,9 +52,15 @@ class MainListTVC: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        print(123)
     }
+    
+    
+}
+
+// MARK: - Helper
+
+extension MainListTVC {
     
     func setUpLayout(){
         contentView.addSubview(cellBackgroundView)
@@ -84,4 +98,5 @@ class MainListTVC: UITableViewCell {
             make.height.equalTo(20)
         }
     }
+
 }

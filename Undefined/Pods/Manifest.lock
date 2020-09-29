@@ -17,7 +17,6 @@ PODS:
   - SteviaLayout (4.7.3)
   - SwiftKeychainWrapper (3.4.0)
   - Then (2.7.0)
-  - Toaster (2.2.0)
   - YPImagePicker (4.2.1):
     - PryntTrimmerView (~> 4.0.0)
     - SteviaLayout (~> 4.7.3)
@@ -31,7 +30,6 @@ DEPENDENCIES:
   - SnapKit (~> 5.0.0)
   - SwiftKeychainWrapper
   - Then
-  - Toaster
   - YPImagePicker
 
 SPEC REPOS:
@@ -47,7 +45,6 @@ SPEC REPOS:
     - SteviaLayout
     - SwiftKeychainWrapper
     - Then
-    - Toaster
     - YPImagePicker
 
 SPEC CHECKSUMS:
@@ -62,9 +59,8 @@ SPEC CHECKSUMS:
   SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
   SwiftKeychainWrapper: 6fc49fbf7d4a6b0772917acb0e53a1639f6078d6
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
-  Toaster: c1a81b376edcc2470157b4d1ee1e9341d3b96455
   YPImagePicker: 3b88ca0c50134af2856c48c481572c98a8b8b65b
 
-PODFILE CHECKSUM: ec47c4a53d8e73a21709ab5b5564a9fbb002b0f7
+PODFILE CHECKSUM: 297bdcf7ed7ab27272abc2eca2193c425acea5cd
 
 COCOAPODS: 1.9.3

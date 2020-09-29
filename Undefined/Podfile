@@ -7,7 +7,6 @@ target 'Undefined' do
 
   # Pods for Undefined
 
-  pod 'Toaster'
   pod 'Gedatsu', configuration: %w(Debug)
   pod 'Kingfisher'
   pod 'SnapKit', '~> 5.0.0'
