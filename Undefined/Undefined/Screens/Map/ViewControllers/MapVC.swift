@@ -199,4 +199,15 @@ extension MapVC {
     
 }
 
-extension MapVC: MTMapViewDelegate {}
+extension MapVC: MTMapViewDelegate { }
+
+extension MTMapPOIItem {
+    func setPoint(_ lat: Double, _ long: Double, _ tag: Int) {
+        self.markerType = .customImage
+        self.customImageName = "locationPin"
+        self.mapPoint = .init(geoCoord: .init(latitude: lat, longitude: long))
+        self.showAnimationType = .noAnimation
+        
+        self.tag = tag
+    }
+}
