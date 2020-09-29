@@ -35,8 +35,7 @@ class MainListTVC: UITableViewCell {
     }
     
     let likeButton = UIButton().then {
-        $0.setTitle("B", for: .normal)
-        $0.setTitleColor(.black, for: .normal)
+        $0.setImage(UIImage(named: "bookmark"), for: .normal)
     }
     
     // MARK: - Variables and Properties
